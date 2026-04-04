@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crosite</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">Decrocro</div>
+    <div class="links">
+      <a href="dashboard.php">Dashboard</a>
+      <a href="login.php">Login</a>
+      <a href="sign up.php">Sign up</a>
+    </div>
+
+ <a href="https://discord.gg/F5sTy2wBPJ"
+       target="_blank"
+       class="discord-btn">
+       
+       <img src="images/Discord-Logo.png"
+        alt="Discord"
+        class="discord-icon">
+
+       Join Discord
+    </a>
+  </div>
+
+  </div>
+</header>
+
+<main class="page">
+    <section class="hero">
+      <h2 class="hero-title">
+        Creating the <span id="typing" class="glow"></span><span class="caret" aria-hidden="true"></span>website
+      </h2>
+
+      <p class="hero-sub">
+        We are a team of passionate developers that eager to learn more everyday
+      </p>
+    </section>
+  </main>
+
+  <script>
+    // Simple typing animation
+    const el = document.getElementById("typing");
+    const phrases = ["best", "safest", "cleanest"];
+    let pi = 0, i = 0, deleting = false;
+
+    function tick() {
+      const word = phrases[pi];
+      if (!deleting) {
+        i++;
+        el.textContent = word.slice(0, i);
+        if (i === word.length) {
+          deleting = true;
+          setTimeout(tick, 900);
+          return;
+        }
+      } else {
+        i--;
+        el.textContent = word.slice(0, i);
+        if (i === 0) {
+          deleting = false;
+          pi = (pi + 1) % phrases.length;
+        }
+      }
+      setTimeout(tick, deleting ? 45 : 70);
+    }
+    tick();
+  </script>
+</body>
+</html>
